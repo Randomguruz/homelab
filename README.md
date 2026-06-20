@@ -4,6 +4,12 @@ Built and maintained 2025-present. Documented June 2026.
 
 ---
 
+## Introduction
+
+This homelab was set up initially as a NAS, hence the choice in operating system. However, over time, it has evolved to perform many more functions, as listed below. This is mostly a curiosity project, hence the low budget and repurposing of old hardware. I had wanted a server since I was gaming years ago, and the spare desktop gave me that chance.
+
+---
+
 ## System
 
 I repurposed an old desktop as my home server. Hardware that was necessary was sourced and added, mostly from Shopee, Carousell and friends. The specs are as follows:
@@ -179,3 +185,11 @@ Another problem I faced was when I was playing games like VRchat. There was no d
 Setting it up required me to look at how streams are handled, through protocols like RTSP, RTMP, HLS and WebRTC. At first, it was not working, which made me delve deeper into the configuration, which was hard, as there was a lot of conflicting advice online
 
 Some said RTSP does not work over a reverse proxy, and some said it would work over NGINX Proxy Manager, as it has a stream function. None of these seemed to work for me. After further investigation, I found out that mediamtx, the streaming server I used, actually only used rtsp for the stream ingest from OBS. The solution that I ended up with was actually adding an index.m3u8 at the end of the link, which output an HLS Multivariant Playlist. This finally allowed the stream to work in game.
+
+---
+
+## Conclusion
+
+This project ended up becoming a lot more than the NAS I set it out to be. In the process of this pursuit, it has produced nothing but problems, but it is still something I love working on and maintaining, as it was something I created. 
+
+Having problems also meant learning opportunities, of which there were many. From having to figure out composing Docker containers, to revisiting networking and Linux, exploring them in greater depth. This also made me a lot more considerate when it comes to hardware constraints, thermals and power efficiency. If I could do things differently, I would have made a lot more considerations with regards to Capex, as me saving on things like used hard drives and Network Interface Cards like the X540-T2, ended up causing me a lot of troubleshooting.
